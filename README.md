@@ -2,7 +2,7 @@
 
 A premium, modern portfolio website built with **React** and **Vanilla CSS**, featuring a sophisticated glassmorphism design, gold accents, and animated Flutter-inspired visuals.
 
-![Portfolio Preview](./public/assets/profile.jpg)
+<!-- ![Portfolio Preview](./public/assets/profile.jpg) -->
 
 ## ✨ Features
 
