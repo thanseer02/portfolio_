@@ -1,0 +1,155 @@
+/* Global Variables & Theme (Premium Dark) */
+:root {
+    /* Colors */
+    --bg-color: #050505; /* Deepest Black */
+    --surface-color: rgba(255, 255, 255, 0.03); /* Glass effect */
+    --primary-color: #3b82f6; /* Keep Blue as primary brand */
+    --accent-color: #D4AF37; /* Gold */
+    --text-primary: #ffffff;
+    --text-secondary: #9ca3af;
+    --border-color: rgba(255, 255, 255, 0.1);
+    
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 4rem;
+    --spacing-xl: 8rem;
+
+    /* Typography */
+    --font-heading: 'Outfit', sans-serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+/* Reset & Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Custom Scrollbar - Hidden but scrollable */
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+}
+
+ul {
+    list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    color: var(--text-primary);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+}
+
+/* Utilities */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.section {
+    padding: var(--spacing-xl) 0;
+}
+
+.text-gradient {
+    background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-color) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+
+.glass-card {
+    background: var(--surface-color);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Removed Shine Effect for cleaner look */
+
+.glass-card:hover {
+    background: rgba(255, 255, 255, 0.08); /* Slightly lighter */
+    border-color: var(--accent-color);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.hover-lift {
+    transition: all 0.3s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-5px); /* Simple lift without scale */
+}
+
+
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+}
+
+@keyframes pulse-glow {
+    0% { filter: drop-shadow(0 0 5px rgba(66, 165, 245, 0.4)); }
+    50% { filter: drop-shadow(0 0 20px rgba(66, 165, 245, 0.6)); }
+    100% { filter: drop-shadow(0 0 5px rgba(66, 165, 245, 0.4)); }
+}
+
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+.flutter-glow {
+    animation: pulse-glow 3s infinite;
+}
+
+/* Responsive Utilities */
+@media (max-width: 768px) {
+    :root {
+        --spacing-xl: 4rem;
+    }
+}
